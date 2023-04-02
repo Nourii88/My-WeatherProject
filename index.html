@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/9b7b7e83fd.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/style.css">
+  </head>
+
+  <body>
+    <div class="weatherApp">
+      <form class="location">
+        <input
+          type="text"
+          id="location"
+          placeholder="Type a city ..."
+          autocomplete="off"
+        />
+      </form>
+      <button id="location-button">Current Location</button>
+      <div class="wrapper">
+      <span class="city">Amsterdam</span>
+      <span class="date">2 March 2020</span>
+      <div class="time">Monday 10:10</div>
+      </div>
+      <div class="degrees">
+        <id id="celcius">12</id> 
+        <small id="units">°C| °F</small>
+      </div>
+      <div class="weatherAttributes">
+        <span class="iconify" data-icon="wi:cloudy" data-inline="false"></span>
+        <id id="description"> cloudy</id>
+        <span
+          class="iconify"
+          data-icon="emojione-monotone:umbrella-with-rain-drops"
+          data-inline="false"
+        ></span>
+        <id id="humidity"> 30%</id>
+        <span
+          class="iconify"
+          data-icon="fa-solid:wind"
+          data-inline="false"
+        ></span>
+        <id id="wind"> 0.3 mph</id>
+      </div>
+      <div class="sunAttributes">
+        <span>
+          <span
+            class="iconify"
+            data-icon="feather-sunset"
+            data-inline="false"
+          ></span>
+          <id id="sunrise"> 7pm</id>
+        </span>
+        <span>
+          <span
+            class="iconify"
+            data-icon="feather:sunrise"
+            data-inline="false"
+          ></span>
+          <id id="sunset"> 7pm</id>
+        </span>
+        <span>
+          <span
+            class="iconify"
+            data-icon="feather:sun"
+            data-inline="false"
+          ></span>
+          1 uv
+        </span>
+      </div>
+      <div class="forecast">
+        <table class="weatherForecast">
+          <tr class="weekDays">
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+          </tr>
+          <tr>
+            <td>
+              <span
+                class="iconify"
+                data-icon="emojione:sun"
+                data-inline="false"
+              ></span>
+              <br />
+              4°|2°
+            </td>
+            <td>
+              <span
+                class="iconify"
+                data-icon="emojione:cloud"
+                data-inline="false"
+              ></span>
+              <br />
+              4°|2°
+            </td>
+            <td>
+              <span
+                class="iconify"
+                data-icon="emojione:sun-behind-cloud"
+                data-inline="false"
+              ></span>
+              <br />
+              2°|0°
+            </td>
+            <td>
+              <span
+                class="iconify"
+                data-icon="noto:cloud-with-snow"
+                data-inline="false"
+              ></span>
+              <br />
+              0°|-2°
+            </td>
+            <td>
+              <span
+                class="iconify"
+                data-icon="emojione:sun"
+                data-inline="false"
+              ></span>
+              <br />
+              2°|0°
+            </td>
+          </tr>
+        </table>
+        <small id="footnote">
+          <a href="https://github.com/Nourii88/My-project" target="_blank"> Open-source code</a>, 
+          by Nouri Dummer
+          </small>
+      </div>
+    </div>
+       <script src="src/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,149 @@
+.weatherApp {
+    background-image: url("../img/field.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 400px;
+    margin: auto;
+    box-shadow: 2px 2px 8px black;
+    padding-bottom: 10px;
+  }
+  
+  form {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 10px 30px 15px;
+  }
+  
+  form input {
+    width: 170px;
+    padding: 10px 20px;
+    background: transparent;
+    border: solid;
+    border-color: black;
+    box-shadow: 1px 1px 7px black;
+    outline: none;
+    border-radius: 20px 20px 20px 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: rgb(50, 205, 115);
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+    border-radius: 20px 20px 20px 20px;
+    transition-duration: 0.4s;
+    opacity: 0.5;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    opacity: 1;
+  }
+  
+  .wrapper {
+    font-family: "Nunito";
+    text-align: center;
+    margin-left: 0 auto;
+  }
+
+  .time {
+    font-family: "Nunito";
+    text-align: center;
+    font-size: 10px;
+   }
+  
+  .degrees {
+    text-align: center;
+    padding: 30px 10px 5px;
+    font-family: "Nunito";
+    font-size: 100px;
+    color: #ffff;
+    text-shadow: 4px 4px 10px black;
+  }
+
+  .degrees small {
+    position: relative;
+    font-size: 18px;
+    top: -53px;
+    left: -20px;
+    
+  } 
+  
+  .weatherSign {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 0px 10px 5px;
+    font-family: "Nunito";
+    font-size: 20px;
+    color: #ffff;
+    text-shadow: 4px 4px 10px black;
+  }
+  
+  .weatherAttributes,
+  .sunAttributes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    font-family: "Nunito";
+    font-weight: 600;
+    color: #ffff;
+    text-shadow: 2px 2px 8px black;
+  }
+  
+  .iconify {
+    padding-right: 4px;
+    padding-left: 15px;
+    font-family: "Nunito";
+    text-align: center;
+    font-weight: 900;
+    font-size: 20px;
+    margin: 2px;
+    color: #ffff;
+  }
+  
+  .weatherForecast {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    text-align: center;
+    border-spacing: 0.3cm;
+    box-shadow: 2px 2px 8px black;
+    border-width: 4px;
+  }
+  
+  .weekDays {
+    border-collapse: separate;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    font-family: "Nunito";
+    font-weight: 800;
+    color: #ffff;
+    text-shadow: 2px 2px 5px black;
+  }
+  
+  td {
+    border-right: transparent;
+    border-radius: 10%;
+    font-family: "Nunito";
+    font-weight: 700;
+    text-align: center;
+    color: #5edfff;
+    text-shadow: 2px 2px 5px black;
+  }
+  
+  small {
+    font-family: "Nunito";
+    font-size: 9px;
+    color:#ffff;
+    text-align: center;
+    margin: auto;
+  }
