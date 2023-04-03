@@ -147,3 +147,13 @@
     text-align: center;
     margin: auto;
   }
+
+  .degrees .active {
+    color: #ffff;
+    text-shadow: 4px 4px 10px black;
+    cursor: default;
+  }
+
+  .degrees .active:hover {
+    text-decoration: none;
+  }
