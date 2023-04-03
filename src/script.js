@@ -41,8 +41,8 @@ let currentTime = document.querySelector("div .time");
 currentTime.innerHTML = `${day} ${hours2}:${minutes2}`;
 
 function showTemp(response) {
-  celsiusTemp = response.data.main.temp;
-  let temperature = Math.round(celsiusTemp);
+  celciusTemp = response.data.main.temp;
+  let temperature = Math.round(celciusTemp);
   let h1 = document.querySelector("#celcius");
   h1.innerHTML = `${temperature}`;
   let att1 = document.querySelector("#description");
@@ -69,8 +69,8 @@ form.addEventListener("submit", showCity);
 
 function showCurrentTemp(response) {
   let temp = document.querySelector("#celcius");
-  celsiusTemp = response.data.main.temp;
-  let currentTemp = Math.round(celsiusTemp);
+  celciusTemp = response.data.main.temp;
+  let currentTemp = Math.round(celciusTemp);
   temp.innerHTML = ` ${currentTemp}`;
   let location = document.querySelector(".city");
   location.innerHTML = `${response.data.name}`;
@@ -99,12 +99,18 @@ function showCurrentLocation(event) {
 
 function showFahrenheitTemp(event) {
 event.preventDefault();
-let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
 let temperature = document.querySelector("#celcius");
+let fahrenheitTemp = (celciusTemp * 9) / 5 + 32;
 temperature.innerHTML = Math.round(fahrenheitTemp);
 }
 
-let celsiusTemp = null;
+function showCelciusTemp(event) {
+ event.preventDefault();
+ let temperature = document.querySelector("#celcius");
+ temperature.innerHTML = Math.round(celciusTemp);
+}
+
+let celciusTemp = null;
 
 
 let button = document.querySelector("#location-button");
@@ -112,3 +118,6 @@ button.addEventListener("click", showCurrentLocation);
 
 let fahrenheitConverter = document.querySelector("#fahrenheit-converter");
 fahrenheitConverter.addEventListener("click", showFahrenheitTemp);
+
+let celciusConverter = document.querySelector("#celcius-converter");
+celciusConverter.addEventListener("click", showCelciusTemp);
