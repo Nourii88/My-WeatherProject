@@ -113,6 +113,8 @@
     margin-top: 50px;
     padding-top: 10px;
     padding-bottom: 15px;
+    padding-left: 15px;
+    
     text-align: center;
     border-spacing: 0.3cm;
     box-shadow: 2px 2px 8px black;
@@ -125,6 +127,8 @@
     font-weight: 800;
     color: #ffff;
     text-shadow: 2px 2px 4px black;
+    padding-right: 15px;
+    padding-left: 15px;
   }
 
   .forcast-temperatures {
@@ -151,8 +155,8 @@
     font-family: "Nunito";
     font-size: 9px;
     color:#ffff;
-    text-align: center;
-    margin: auto; 
+    margin: auto;
+    text-align: center; 
   }
 
   .degrees .active {

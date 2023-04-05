@@ -40,6 +40,37 @@ let minutes2 = (minutes < 10 ? "0" : "") + minutes;
 let currentTime = document.querySelector("div .time");
 currentTime.innerHTML = `${day} ${hours2}:${minutes2}`;
 
+function showForcast() {
+let forcast = document.querySelector("#forcast");
+
+let forcastHTML = "";
+let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+days.forEach(function(day) {
+  forcastHTML = forcastHTML + 
+  `
+  <div class="row">
+              <div class="col">
+                <div class="forcast-weekday">
+              ${day}
+              <br>
+              <span
+                  class="iconify"
+                  data-icon="emojione:sun"
+                  data-inline="false"
+                ></span>
+                <div class="forcast-temperatures">
+                <span class="weather-forcast-temperature-max">4°</span>
+                | <span class="weather-forcast-temperature-min">2°</span>
+              </div>            
+            </div>
+          </div>
+        </div>
+        `;
+})
+
+      forcast.innerHTML = forcastHTML;
+}
+
 function showTemp(response) {
   celsiusTemp = response.data.main.temp;
   let temperature = Math.round(celsiusTemp);
@@ -126,3 +157,6 @@ fahrenheitConverter.addEventListener("click", showFahrenheitTemp);
 
 let celsiusConverter = document.querySelector("#celsius-converter");
 celsiusConverter.addEventListener("click", showCelsiusTemp);
+
+
+showForcast();
