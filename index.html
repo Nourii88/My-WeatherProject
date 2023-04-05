@@ -10,7 +10,7 @@
       src="https://kit.fontawesome.com/9b7b7e83fd.js"
       crossorigin="anonymous"
     ></script>
-    <link
+       <link
       href="https://fonts.googleapis.com/css?family=Nunito&display=swap"
       rel="stylesheet"
     />
@@ -18,6 +18,7 @@
   </head>
 
   <body>
+    <div class="container">
     <div class="weatherApp">
       <form class="location">
         <input
@@ -85,69 +86,29 @@
           1 uv
         </span>
       </div>
-      <div class="forecast">
-        <table class="weatherForecast">
-          <tr class="weekDays">
-            <th>Tue</th>
-            <th>Wed</th>
-            <th>Thu</th>
-            <th>Fri</th>
-            <th>Sat</th>
-          </tr>
-          <tr>
-            <td>
-              <span
+      <div class="weather-forecast">
+          <div class="row">
+            <div class="col">
+              <div class="forcast-weekday">
+            Tue
+            <br>
+            <span
                 class="iconify"
                 data-icon="emojione:sun"
                 data-inline="false"
               ></span>
-              <br />
-              4°|2°
-            </td>
-            <td>
-              <span
-                class="iconify"
-                data-icon="emojione:cloud"
-                data-inline="false"
-              ></span>
-              <br />
-              4°|2°
-            </td>
-            <td>
-              <span
-                class="iconify"
-                data-icon="emojione:sun-behind-cloud"
-                data-inline="false"
-              ></span>
-              <br />
-              2°|0°
-            </td>
-            <td>
-              <span
-                class="iconify"
-                data-icon="noto:cloud-with-snow"
-                data-inline="false"
-              ></span>
-              <br />
-              0°|-2°
-            </td>
-            <td>
-              <span
-                class="iconify"
-                data-icon="emojione:sun"
-                data-inline="false"
-              ></span>
-              <br />
-              2°|0°
-            </td>
-          </tr>
-        </table>
+              <div class="forcast-temperatures">
+              <span class="weather-forcast-temperature-max">4°</span>
+              | <span class="weather-forcast-temperature-min">2°</span>
+            </div>            
+          </div>
+        </div>
         <small id="footnote">
           <a style="text-decoration:none" href="https://github.com/Nourii88/My-project" target="_blank"> Open-source code</a>, 
           by Nouri Dummer
           </small>
-      </div>
-    </div>
+         </div>
+        </div>
        <script src="src/script.js"></script>
   </body>
 </html>

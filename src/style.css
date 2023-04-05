@@ -108,10 +108,8 @@
     color: #ffff;
   }
   
-  .weatherForecast {
+  .weather-forecast {
     display: flex;
-    justify-content: center;
-    align-items: center;
     margin-top: 50px;
     padding-top: 10px;
     padding-bottom: 15px;
@@ -119,15 +117,24 @@
     border-spacing: 0.3cm;
     box-shadow: 2px 2px 8px black;
     border-width: 4px;
+    
   }
   
-  .weekDays {
-    border-collapse: separate;
-    border-bottom: 2px solid rgb(0, 0, 0);
+  .forcast-weekday {
     font-family: "Nunito";
     font-weight: 800;
     color: #ffff;
-    text-shadow: 2px 2px 5px black;
+    text-shadow: 2px 2px 4px black;
+  }
+
+  .forcast-temperatures {
+    color: #5edfff;
+    
+    
+  }
+
+  .weather-forcast-temperature-min {
+    opacity: 0.5;
   }
   
   td {
