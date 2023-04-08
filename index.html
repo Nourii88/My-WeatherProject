@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Document</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
     <script
       src="https://kit.fontawesome.com/9b7b7e83fd.js"
@@ -14,7 +12,10 @@
       href="https://fonts.googleapis.com/css?family=Nunito&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
     <link rel="stylesheet" href="src/style.css">
+    <title>Weather App</title>
   </head>
 
   <body>
@@ -42,9 +43,7 @@
         </small>
       </div>
       <div class="weatherAttributes">
-        <span class="iconify" 
-        data-icon="wi:cloudy" 
-        data-inline="false">
+        <img src="" alt="" id="icon" class="iconify" width="35" />
       </span>
         <id id="description"> cloudy</id>
         <span
@@ -64,7 +63,7 @@
         <span>
           <span
             class="iconify"
-            data-icon="feather-sunset"
+            data-icon="feather-sunrise"
             data-inline="false"
           ></span>
           <id id="sunrise"> 7pm</id>
@@ -72,21 +71,13 @@
         <span>
           <span
             class="iconify"
-            data-icon="feather:sunrise"
+            data-icon="feather:sunset"
             data-inline="false"
           ></span>
           <id id="sunset"> 7pm</id>
         </span>
-        <span>
-          <span
-            class="iconify"
-            data-icon="feather:sun"
-            data-inline="false"
-          ></span>
-          1 uv
-        </span>
-      </div>
-      <div class="weather-forecast" id="forcast">
+        </div>
+      <div class="weather-forecast" id="forecast">
       </div>
           <small id="footnote">
           <a style="text-decoration:none" href="https://github.com/Nourii88/My-project" target="_blank"> Open-source code</a>, 

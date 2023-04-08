@@ -40,17 +40,17 @@ let minutes2 = (minutes < 10 ? "0" : "") + minutes;
 let currentTime = document.querySelector("div .time");
 currentTime.innerHTML = `${day} ${hours2}:${minutes2}`;
 
-function showForcast() {
-let forcast = document.querySelector("#forcast");
+function showForecast() {
+let forecast = document.querySelector("#forecast");
 
-let forcastHTML = "";
+let forecastHTML = "";
 let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
 days.forEach(function(day) {
-  forcastHTML = forcastHTML + 
+  forecastHTML = forecastHTML + 
   `
   <div class="row">
               <div class="col">
-                <div class="forcast-weekday">
+                <div class="forecast-weekday">
               ${day}
               <br>
               <span
@@ -58,9 +58,9 @@ days.forEach(function(day) {
                   data-icon="emojione:sun"
                   data-inline="false"
                 ></span>
-                <div class="forcast-temperatures">
-                <span class="weather-forcast-temperature-max">4°</span>
-                | <span class="weather-forcast-temperature-min">2°</span>
+                <div class="forecast-temperatures">
+                <span class="weather-forecast-temperature-max">4°</span>
+                | <span class="weather-forecast-temperature-min">2°</span>
               </div>            
             </div>
           </div>
@@ -68,20 +68,7 @@ days.forEach(function(day) {
         `;
 })
 
-      forcast.innerHTML = forcastHTML;
-}
-
-function showTemp(response) {
-  celsiusTemp = response.data.main.temp;
-  let temperature = Math.round(celsiusTemp);
-  let h1 = document.querySelector("#celsius");
-  h1.innerHTML = `${temperature}`;
-  let att1 = document.querySelector("#description");
-  att1.innerHTML = `${response.data.weather[0].description}`;
-  let att2 = document.querySelector("#humidity");
-  att2.innerHTML = `${response.data.main.humidity}%`;
-  let att3 = document.querySelector("#wind");
-  att3.innerHTML = `${response.data.wind.speed}mph`;
+      forecast.innerHTML = forecastHTML;
 }
 
 function showCity(event) {
@@ -90,9 +77,9 @@ function showCity(event) {
   let city = document.querySelector(".city");
   let location = input.value;
   city.innerHTML = location[0].toUpperCase() + location.slice(1);
-  let apiKey = "d9dbc4246c91e5e8565c5d56a1d1c468";
+  let apiKey = "d9dbc4246c91e5e8565c5d56a1d1c468"; 
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showTemp);
+  axios.get(apiUrl).then(showCurrentTemp);
 }
 
 let form = document.querySelector("form");
@@ -111,8 +98,20 @@ function showCurrentTemp(response) {
   att2.innerHTML = `${response.data.main.humidity}%`;
   let att3 = document.querySelector("#wind");
   att3.innerHTML = `${response.data.wind.speed}mph`;
-}
+  let att4 = document.querySelector("#sunrise");
+  att4.innerHTML = `${new Date(response.data.sys.sunrise * 1000).toLocaleTimeString(('en-IN'), { hour: "2-digit", minute: "2-digit" })}`;
+  let att5 = document.querySelector("#sunset");
+  att5.innerHTML = `${new Date(response.data.sys.sunset * 1000).toLocaleTimeString(('en-IN'), { hour: "2-digit", minute: "2-digit" })}`;
+  let icon = document.querySelector("#icon");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
 
+    );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  
+}
 
 
 function retrievePosition(position) {
@@ -159,4 +158,4 @@ let celsiusConverter = document.querySelector("#celsius-converter");
 celsiusConverter.addEventListener("click", showCelsiusTemp);
 
 
-showForcast();
+showForecast();
