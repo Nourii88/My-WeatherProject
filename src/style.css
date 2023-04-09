@@ -1,5 +1,5 @@
 .weatherApp {
-    background-image: url("../img/field.jpg");
+    background-image: url("../img/mountains.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     width: 400px;
@@ -99,7 +99,7 @@
   
   .iconify {
     padding-right: 4px;
-    padding-left: 15px;
+    padding-left: 8px;
     font-family: "Nunito";
     text-align: center;
     font-weight: 900;
@@ -108,23 +108,17 @@
     color: #ffff;
   }
   
-  .iconify .icon {
-    font-size: 15px;
-  }
   .weather-forecast {
     display: flex;
     margin-top: 50px;
     padding-top: 10px;
     padding-bottom: 15px;
-    padding-left: 15px;
-    
     text-align: center;
     border-spacing: 0.3cm;
     box-shadow: 2px 2px 8px black;
-    border-width: 4px;
-    
+    border-width: 4px; 
   }
-  
+    
   .forecast-weekday {
     font-family: "Nunito";
     font-weight: 800;
@@ -135,23 +129,11 @@
   }
 
   .forecast-temperatures {
-    color: #5edfff;
-    
-    
+    color: #5edfff; 
   }
 
-  .weather-forecast-temperature-min {
+  .forecast-temperature-min {
     opacity: 0.5;
-  }
-  
-  td {
-    border-right: transparent;
-    border-radius: 10%;
-    font-family: "Nunito";
-    font-weight: 700;
-    text-align: center;
-    color: #5edfff;
-    text-shadow: 2px 2px 5px black;
   }
   
   small {
