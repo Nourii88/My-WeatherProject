@@ -49,21 +49,21 @@ function formatDay(timestamp) {
 }
 
 function showForecast(response) {
-let forecast = response.data.list[index];  
+let forecast = response.data.daily;  
 
 let forecastElement = document.querySelector("#forecast");
 
 let forecastHTML = `<div class="row">`;
-forecast.forEach(function(forecastDay) {
-
+forecast.forEach(function (forecastDay, index) {
+  if (index < 5) {
   forecastHTML = forecastHTML + 
   `
            <div class="col">
                 <div class="forecast-weekday">
-              ${formatDay(forecastDay.dt)}</div>          
+              ${formatDay(forecastDay.dt)}         
               <img src="https://openweathermap.org/img/wn/${
                 forecastDay.weather[0].icon
-              }@2x.png" alt="" class="iconify" width="35"/>
+              }@2x.png" alt="" width="35"/></div> 
               <div class="forecast-temperatures">
                 <span class="forecast-temperature-max">${Math.round(
                   forecastDay.temp.max
@@ -75,6 +75,7 @@ forecast.forEach(function(forecastDay) {
           </div>
         </div>
         `;
+                }
 })
       forecastHTML = forecastHTML + `</div>`;
       forecastElement.innerHTML = forecastHTML;
@@ -93,6 +94,12 @@ function showCity(event) {
 
 let form = document.querySelector("form");
 form.addEventListener("submit", showCity);
+
+function getForecast(coordinates) {
+  let apiKey = "d9dbc4246c91e5e8565c5d56a1d1c468";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showForecast);
+}
 
 function showCurrentTemp(response) {
   let temp = document.querySelector("#celsius");
@@ -118,6 +125,8 @@ function showCurrentTemp(response) {
 
     );
   icon.setAttribute("alt", response.data.weather[0].description);  
+
+  getForecast(response.data.coord);
 }
 
 
@@ -128,7 +137,7 @@ function retrievePosition(position) {
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(url).then(showCurrentTemp);
 
-  let urlForecast = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  let urlForecast = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(urlForecast).then(showForecast);
 }
 
@@ -166,5 +175,3 @@ fahrenheitConverter.addEventListener("click", showFahrenheitTemp);
 
 let celsiusConverter = document.querySelector("#celsius-converter");
 celsiusConverter.addEventListener("click", showCelsiusTemp);
-
-

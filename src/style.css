@@ -109,27 +109,37 @@
   }
   
   .weather-forecast {
-    display: flex;
+    display: grid;
+   justify-content: center;
+    grid-auto-flow: column;
     margin-top: 50px;
     padding-top: 10px;
+    padding-left: 10px;
     padding-bottom: 15px;
-    text-align: center;
     border-spacing: 0.3cm;
     box-shadow: 2px 2px 8px black;
     border-width: 4px; 
   }
+
     
-  .forecast-weekday {
+  .forecast-weekday, .forecast-temperatures {
     font-family: "Nunito";
     font-weight: 800;
+    text-align: center;
     color: #ffff;
     text-shadow: 2px 2px 4px black;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+
+  .forcast-icon {
+    margin: 50px;
+    justify-content: center;
   }
 
   .forecast-temperatures {
-    color: #5edfff; 
+    color: #47d2f4;
+    font-size: 13px;
   }
 
   .forecast-temperature-min {
