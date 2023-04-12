@@ -87,11 +87,15 @@ function showCity(event) {
   let city = document.querySelector(".city");
   let location = input.value;
   city.innerHTML = location[0].toUpperCase() + location.slice(1);
-  let apiKey = "d9dbc4246c91e5e8565c5d56a1d1c468"; 
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showCurrentTemp);
+  searchCity(location)
 }
 
+function searchCity(city){
+  let apiKey = "d9dbc4246c91e5e8565c5d56a1d1c468"; 
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showCurrentTemp);
+}
+searchCity("Amsterdam")
 let form = document.querySelector("form");
 form.addEventListener("submit", showCity);
 
@@ -175,3 +179,5 @@ fahrenheitConverter.addEventListener("click", showFahrenheitTemp);
 
 let celsiusConverter = document.querySelector("#celsius-converter");
 celsiusConverter.addEventListener("click", showCelsiusTemp);
+
+changeBackground();
